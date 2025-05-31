@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+.game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, #87CEEB, #E0F7FA);
+    overflow: hidden;
+}
+
+.score-panel {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    font-size: 18px;
+    display: flex;
+    gap: 15px;
+}
+
+.character {
+    position: absolute;
+    width: 50px;
+    height: 80px;
+    background-color: #FF5722;
+    bottom: 0;
+    left: 100px;
+    border-radius: 10px 10px 0 0;
+    transition: transform 0.2s;
+    z-index: 10;
+}
+
+.obstacle {
+    position: absolute;
+    bottom: 0;
+}
+
+.obstacle.high {
+    width: 30px;
+    height: 100px;
+    background-color: #4CAF50;
+}
+
+.obstacle.low {
+    width: 70px;
+    height: 40px;
+    background-color: #F44336;
+}
+
+.item {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.item.coin {
+    background: radial-gradient(circle at 30% 30%, #FFD700, #FF9800);
+    box-shadow: 0 0 10px gold;
+}
+
+.item.shield {
+    background: radial-gradient(circle at 30% 30%, #3F51B5, #2196F3);
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+
+.start-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 100;
+}
+
+.start-screen h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px black;
+}
+
+.start-screen button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

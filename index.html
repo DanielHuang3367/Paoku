@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极速跑酷</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="score-panel">
+            <span>分数: <span id="score">0</span></span>
+            <span>生命: <span id="lives">3</span></span>
+            <span>连击: <span id="combo">0</span>x</span>
+        </div>
+        <div class="character" id="player"></div>
+        <div id="obstacles"></div>
+        <div id="items"></div>
+        <div class="start-screen" id="startScreen">
+            <h1>极速跑酷</h1>
+            <button id="startBtn" onclick="start_Game()">开始游戏</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
