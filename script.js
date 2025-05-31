@@ -221,13 +221,13 @@ class Game
         this.state.isJumping = true;
         let jumpHeight = 0;
         const jumpUp = () => {
-            jumpHeight += 10;
+            jumpHeight += 15;
             this.player.style.bottom = `${jumpHeight}px`;
 
             if (jumpHeight > 200) {
                 clearInterval(upInterval);
                 const downInterval = setInterval(() => {
-                    jumpHeight -= 10;
+                    jumpHeight -= 15;
                     this.player.style.bottom = `${jumpHeight}px`;
 
                     if (jumpHeight <= 0) {
