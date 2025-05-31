@@ -10,6 +10,9 @@ class Game
         this.scoreElement = document.getElementById('score');
         this.livesElement = document.getElementById('lives');
         this.comboElement = document.getElementById('combo');
+        this.fly = 15;
+        this.fall = 15;
+        this.flyHeight = 200;
 
         this.state = {
             isRunning: false,
@@ -34,6 +37,7 @@ class Game
         document.addEventListener('keydown', (e) => {
             if (e.code === 'Space') this.jump();
             if (e.code === 'ArrowDown') this.slide();
+            if (e.code === 'ArrowRight') this.super();
         });
     }
 
@@ -214,6 +218,11 @@ class Game
         }
     }
 
+    super() {
+        this.fly = 30;
+        this.flyHeight = 300;
+    }
+
     jump()
     {
         if (!this.state.isRunning || this.state.isJumping) return;
@@ -221,13 +230,13 @@ class Game
         this.state.isJumping = true;
         let jumpHeight = 0;
         const jumpUp = () => {
-            jumpHeight += 15;
+            jumpHeight += this.fly;
             this.player.style.bottom = `${jumpHeight}px`;
 
-            if (jumpHeight > 200) {
+            if (jumpHeight > this.flyHeight) {
                 clearInterval(upInterval);
                 const downInterval = setInterval(() => {
-                    jumpHeight -= 15;
+                    jumpHeight -= this.fall;
                     this.player.style.bottom = `${jumpHeight}px`;
 
                     if (jumpHeight <= 0) {
