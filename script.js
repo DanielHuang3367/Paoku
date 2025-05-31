@@ -224,7 +224,7 @@ class Game
             jumpHeight += 10;
             this.player.style.bottom = `${jumpHeight}px`;
 
-            if (jumpHeight > 120) {
+            if (jumpHeight > 200) {
                 clearInterval(upInterval);
                 const downInterval = setInterval(() => {
                     jumpHeight -= 10;
