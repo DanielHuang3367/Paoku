@@ -220,15 +220,15 @@ class Game
     }
 
     super() {
-        this.fly = 30;
-        this.flyHeight = 300;
-        this.state.speed = 7;
+        this.fly += 3;
+        this.flyHeight += 30;
+        this.state.speed += 2;
     }
 
     back() {
-        this.fly = 15;
-        this.flyHeight = 200;
-        this.state.speed = 5;
+        this.fly -= 3;
+        this.flyHeight -= 30;
+        this.state.speed -= 2;
     }
 
     jump()
