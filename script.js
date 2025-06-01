@@ -38,6 +38,7 @@ class Game
             if (e.code === 'Space') this.jump();
             if (e.code === 'ArrowDown') this.slide();
             if (e.code === 'ArrowRight') this.super();
+            if (e.code === 'ArrowLeft') this.back();
         });
     }
 
@@ -221,6 +222,15 @@ class Game
     super() {
         this.fly = 30;
         this.flyHeight = 300;
+        this.state.speed = 7;
+        this.player.backgroundColor = "#2196F3";
+    }
+
+    back() {
+        this.fly = 15;
+        this.flyHeight = 200;
+        this.state.speed = 5;
+        this.player.backgroundColor = "#FF5722";
     }
 
     jump()
