@@ -8,7 +8,9 @@ body {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to bottom, #87CEEB, #E0F7FA) scroll;
+    background-image: url("beijing.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     overflow: hidden;
 }
 
